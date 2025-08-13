@@ -16,16 +16,12 @@ export const galleryData = {
     './img_Sanco/DP.jpg',
   ],
   tarro: [
-    './public/img_Tarro/1000001813.jpg',
-    './public/img_Tarro/1000001816.jpg',
-    './public/img_Tarro/1000001817.jpg',
-    './public/img_Tarro/1000001819.jpg',
-    './public/img_Tarro/DP.jpg',
+    './img_Tarro/1000001813.jpg',
+    './img_Tarro/1000001816.jpg',
+    './img_Tarro/1000001817.jpg',
+    './img_Tarro/1000001819.jpg',
+    './img_Tarro/DP.jpg',
     
-  ],
-  baby: [
-    '/img_Baby/1.jpg',
-    '/img_Baby/2.jpg',
-    '/img_Baby/3.jpg',
-  ],
+  ]
+  
 };

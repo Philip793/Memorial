@@ -1,12 +1,42 @@
-# React + Vite
+MEMORIAL REACT WEB APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ABOUT
+A fully responsive Single Page Application (SPA) built using React and Vite. The application features 
+state-driven navigation and dynamic rendering of categorized photo collections from structured JavaScript arrays. 
+Designed for a smooth, mobile-friendly user experience with clean styling and intuitive navigation.
 
-Currently, two official plugins are available:
+Originally created as a personal memorial project, this app also serves as a demonstration of front-end development 
+best practices, SPA architecture, and interactive UI design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+TECH STACK
+Languages: HTML, CSS, JavaScript, React, Vite
+Framework: React
+Build Tool: Vite
+Hosting: To be determined.
 
-## Expanding the ESLint configuration
+FEATURES
+Single Page Application (SPA) using React architecture
+State-driven navigation between views
+Dynamic rendering of images from structured JavaScript arrays
+Interactive hover effects for clickable elements
+Category-based gallery with per-category navigation
+Responsive design for desktop and mobile
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Installation
+Clone repository:
+git clone (https://github.com/Philip793/Memorial.git)
+
+Navigate to project folder
+cd memorial
+
+Install dependencies
+npm install
+
+Start development server
+npm run dev
+
+Live link:
+To be provided
+
+Note:
+This application was originally developed as a personal memorial for my late cats, showcasing cherished memories in a gallery format. While deeply personal in theme, the project is a practical example of building interactive, state-driven React applications with responsive design.
