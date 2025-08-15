@@ -28,36 +28,26 @@ function App() {
       )}
 
       {stage === 'gallery' && (
-        <div className="gallery-grid">
-          <button
-            className="gallery-item"
-            onClick={() => handleRealmClick('sanco')}
-            aria-label="Open Realm of Sancho"
-          >
-            <p className="image-label">Realm of Sancho</p>
+        <div className="center">
+          <h1>Memorial</h1>
+               <div className='gallery-grid' tabIndex={0}>     
             <img
+            
               src="/img_Sanco/DP.jpg"
               alt="Realm of Sancho"
               className="gallery-img"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
+              onClick={() => handleRealmClick('sanco')}
+              />
+          
 
-          <button
-            className="gallery-item"
-            onClick={() => handleRealmClick('tarro')}
-            aria-label="Open Realm of Tarro"
-          >
-            <p className="image-label">Realm of Tarro</p>
+         
+            
             <img
               src="/img_Tarro/DP.jpg"
               alt="Realm of Tarro"
               className="gallery-img"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
+              onClick={() => handleRealmClick('tarro')} />
+          </div>
         </div>
       )}
 

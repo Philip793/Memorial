@@ -8,22 +8,54 @@ html, body {
   background-position: center;
 }
 .gallery-grid {
+  --g: 8px; 
+   --size: min(80svw, 80svh);  
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: clamp(0.75rem, 2.5vw, 1.25rem);
-  padding: clamp(1rem, 4vw, 2rem);
-  min-height: 100svh;
-  box-sizing: border-box;
-  align-content: start;
-  justify-items: center;
+  grid-template-areas: "stack"; 
+  width: var(--size);
+  height: var(--size);
+  border-radius: 12px;
+  overflow: hidden;
+  border-style: solid;
+  border-color: green
+}
+.gallery-grid > img {
+  --_p: calc(-1 * var(--g));
+  grid-area: stack;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: clip-path .4s .1s, transform .2s;
 }
 
-.image-label {
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  font-size: clamp(1rem, 3.5vw, 1.5rem);
-  color: #070202;
+/* Triangular splits */
+.gallery-grid > img:first-child {
+  clip-path: polygon(0 0, calc(100% + var(--_p)) 0, 0 calc(100% + var(--_p)));
 }
+.gallery-grid > img:last-child {
+  clip-path: polygon(100% 100%, 100% calc(0% - var(--_p)), calc(0% - var(--_p)) 100%);
+}
+
+/* Hover (desktop) */
+.gallery-grid:hover > img:last-child,
+.gallery-grid:hover > img:first-child:hover {
+  --_p: calc(50% - var(--g));
+}
+.gallery-grid:hover > img:first-child,
+.gallery-grid:hover > img:first-child:hover + img {
+  --_p: calc(-50% - var(--g));
+}
+
+/* Touch/keyboard fallback */
+.gallery-grid:active > img:last-child,
+.gallery-grid:focus-within > img:last-child {
+  --_p: calc(50% - var(--g));
+}
+.gallery-grid:active > img:first-child,
+.gallery-grid:focus-within > img:first-child {
+  --_p: calc(-50% - var(--g));
+}
+
 
 .gallery-img {
   width: 100%;
@@ -103,9 +135,18 @@ width: 100%;
   box-shadow: 0 0 26px 10px rgba(255, 255, 255, 0.35);
   filter: brightness(1.04);
 }
-
+@media (max-width: 480px) {
+  .gallery-grid { --g: 6px; --size: min(92svw, 70svh); }
+}
 @media (max-height: 520px) {
   .fullscreen-bg {
     height: min(66svh, 420px);
   }
+}
+.center {
+  min-height: 100svh;          /* safe viewport height for mobile */
+  display: grid;
+  place-items: center;         /* center horizontally + vertically */
+  padding: clamp(12px, 3vw, 24px);
+  box-sizing: border-box;
 }
